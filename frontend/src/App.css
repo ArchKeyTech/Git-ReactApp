@@ -1,0 +1,82 @@
+/*
+CSS styling of App component
+*/
+
+/*styling the github gitlab main background image*/
+.background-img {
+  width: 40%;
+  padding-bottom: 15%;
+  padding-top: 5%;
+}
+
+/*styling of search engine heading */
+.heading{
+  margin: 30px;
+  color: orange;
+}
+
+/*styling body element*/
+body {
+  background-color: rgba(32, 8, 59, 0.9);
+}
+
+/* styling App div which holds main page divs */
+.App {
+  background-color: rgb(100, 81, 148);
+  margin: auto;
+  width: 40%;
+  min-width: 600px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+/*styling main-page div inside App class*/
+.main-page {
+  margin: auto;
+  width: 100%;
+}
+
+/* styling the Search div */
+.search-block{
+  margin-bottom: 20px;
+  padding: 5px;
+  display: inline-block;
+  width: 90%;
+}
+
+/*styling of the input form*/
+input {
+  
+  height: 25px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  color: rgb(255, 255, 255);
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: rgb(184, 217, 219, 0.5);
+  width: 60%;
+  border-radius: 10px 0px 0px 10px;
+  font-size: 15px;
+ 
+}
+
+/* styling Search form */
+.search {
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+}
+/* styling of Search button */
+.search-btn {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: orange;
+  padding: 2px 20px 2px 20px;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
+}
+

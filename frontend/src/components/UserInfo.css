@@ -1,0 +1,120 @@
+/*
+CSS styling for Userinfo component
+*/
+
+/*styling div of profile pic*/
+.profile-pic-div{
+    text-align: center;
+}
+
+/*styling div which holds profile button and profile picture*/
+.row {
+    background-color: rgba(43, 4, 87, 0.7);
+}
+/* the profile picture image */
+.profile-pic {
+    border-radius: 50%;
+    width: 52%;
+    border: 6px solid rgb(219, 205, 205, 0.7);
+
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+/*effect to make profile pic pulse*/
+@keyframes pulse {
+	0% {
+		transform: scale(0.97);
+		box-shadow: 0 0 0 2px white;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(185, 42, 42, 0);
+	}
+
+	100% {
+		transform: scale(0.97);
+		box-shadow: 0 0 0 0 rgba(180, 48, 48, 0);
+	}
+}
+
+
+/*styling user details list element*/
+.user-detail-list li{
+    list-style-type: none;
+    padding: 7px 0px 7px 0px;
+    
+}
+
+/*stling the repo list */
+li{
+    padding-top: 8px;
+    justify-content: left;
+    text-align: left;
+}
+
+/*styling lower-block which contains followers and following text*/
+.lower-container{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(238, 166, 12, 0.7);
+    margin-bottom: 40px;
+    padding: 10px 5px 10px 5px;
+}
+
+/*styling lower-block which contains followers and following text*/
+.lower-container p{
+    margin: 0px;
+    font-weight: bold;
+}
+
+/*styling og icons in user details*/
+.icons {
+    font-size: 27px;
+    color: orange;
+}
+
+/* Profile page loading gif styling */
+.loading-block {
+    text-align: center;
+}
+/*styling the loading gif*/
+.loading-img {
+    width: 50%;
+}
+
+.user-details{
+    background-color: rgba(104, 56, 160, 0.4);
+    padding-top: 5px;
+    margin-top: 15px;
+}
+
+/* The button to their page */
+.profile-btn{
+    
+    background-color: orange;
+    color: white;
+    padding: 8px 8px 8px 8px;
+    border-radius: 5px;
+    border: 1px solid orange;
+    font-weight: bold;
+    margin: 15px 1px 1px 15px;
+
+}
+
+
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Main profile body */
+.profile-div{
+    text-align: center;
+    text-align: left;
+    border: 5px solid orange;
+    border-top: none;
+    color: white;
+    
+    
+}

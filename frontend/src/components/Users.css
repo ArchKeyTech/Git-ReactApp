@@ -1,0 +1,43 @@
+/* Houses the results from the search */
+.users-row {
+    background-color: rgba(238, 166, 12, 0.3);
+    display: flex;
+    justify-content: space-around;
+    border: 4px solid orange;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+}
+/* Styling for the div that houses each result from the search */
+.user-block{
+    width: 100%;
+    padding-bottom: 10px;
+    border-right: solid 2px orange;
+    border-left: solid 2px orange;
+}
+.user-block:hover{
+    background-color: orange;
+}
+/* Styling for when a provider has been chosen */
+.display{
+    background-color: orange;
+}
+/* Styling for the VCS prider name */
+.vcs-title {
+    font-size: 110%;
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+}
+/* Styling for the usernames */
+.user-block p{
+    margin-top: 10px;
+}
+/* makes the name bolder when hovered over */
+.user-name:hover {
+    cursor: pointer;
+}
+
+/*styling name of repo*/
+.repo-name {
+    font-weight: bold;
+}

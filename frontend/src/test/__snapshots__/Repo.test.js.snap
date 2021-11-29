@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders empty repo correctly 1`] = `
+<div>
+  User has no repository
+</div>
+`;
+
+exports[`renders repo correctly 1`] = `
+Array [
+  <div>
+    <div
+      className="repo-div"
+    >
+      <div
+        className="repo-title"
+      >
+        <p
+          className="repo-name"
+        >
+          name1
+        </p>
+        <p>
+           
+          <span
+            className="repo-description"
+          >
+             
+            description1
+             
+          </span>
+        </p>
+        <div
+          className="repo-date"
+        >
+          <p>
+            Created on: 
+          </p>
+        </div>
+      </div>
+      <div
+        className="repo-commit-title"
+      >
+        <p>
+          Commit Feed
+        </p>
+      </div>
+      <div
+        className="commit-msg-div"
+      >
+        <ul>
+          <li
+            className="commit-msg"
+          >
+            msg1
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg2
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg3
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg4
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg5
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="repo-div"
+    >
+      <div
+        className="repo-title"
+      >
+        <p
+          className="repo-name"
+        >
+          name2
+        </p>
+        <p>
+           
+          <span
+            className="repo-description"
+          >
+             
+            description2
+             
+          </span>
+        </p>
+        <div
+          className="repo-date"
+        >
+          <p>
+            Created on: 
+          </p>
+        </div>
+      </div>
+      <div
+        className="repo-commit-title"
+      >
+        <p>
+          Commit Feed
+        </p>
+      </div>
+      <div
+        className="commit-msg-div"
+      >
+        <ul>
+          <li
+            className="commit-msg"
+          >
+            msg1
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg2
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg3
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg4
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg5
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="repo-div"
+    >
+      <div
+        className="repo-title"
+      >
+        <p
+          className="repo-name"
+        >
+          name3
+        </p>
+        <p>
+           
+          <span
+            className="repo-description"
+          >
+             
+            description3
+             
+          </span>
+        </p>
+        <div
+          className="repo-date"
+        >
+          <p>
+            Created on: 
+          </p>
+        </div>
+      </div>
+      <div
+        className="repo-commit-title"
+      >
+        <p>
+          Commit Feed
+        </p>
+      </div>
+      <div
+        className="commit-msg-div"
+      >
+        <ul>
+          <li
+            className="commit-msg"
+          >
+            msg1
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg2
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg3
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg4
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg5
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="repo-div"
+    >
+      <div
+        className="repo-title"
+      >
+        <p
+          className="repo-name"
+        >
+          name4
+        </p>
+        <p>
+           
+          <span
+            className="repo-description"
+          >
+             
+            description4
+             
+          </span>
+        </p>
+        <div
+          className="repo-date"
+        >
+          <p>
+            Created on: 
+          </p>
+        </div>
+      </div>
+      <div
+        className="repo-commit-title"
+      >
+        <p>
+          Commit Feed
+        </p>
+      </div>
+      <div
+        className="commit-msg-div"
+      >
+        <ul>
+          <li
+            className="commit-msg"
+          >
+            msg1
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg2
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg3
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg4
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg5
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="repo-div"
+    >
+      <div
+        className="repo-title"
+      >
+        <p
+          className="repo-name"
+        >
+          name5
+        </p>
+        <p>
+           
+          <span
+            className="repo-description"
+          >
+             
+            description5
+             
+          </span>
+        </p>
+        <div
+          className="repo-date"
+        >
+          <p>
+            Created on: 
+          </p>
+        </div>
+      </div>
+      <div
+        className="repo-commit-title"
+      >
+        <p>
+          Commit Feed
+        </p>
+      </div>
+      <div
+        className="commit-msg-div"
+      >
+        <ul>
+          <li
+            className="commit-msg"
+          >
+            msg1
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg2
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg3
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg4
+          </li>
+          <li
+            className="commit-msg"
+          >
+            msg5
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+]
+`;
