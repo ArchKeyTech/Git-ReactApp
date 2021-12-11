@@ -15,3 +15,7 @@ Download the ZIP file of the code or Git Clone from your terminal. Then, navigat
 
 Once the install is complete, run `npm start` to launch the app in development mode.
 This will launch the app in the browser with server [http://localhost:3000](http://localhost:3000).
+
+## Credit
+
+By [Dan-Samuel Moleka](https://github.com/ArchKeyTechnique)
