@@ -27,7 +27,6 @@ class GitProfile extends React.Component {
      * store the response to repoContent
      */
     if (this.props.chosenVcs === 0) {
-      console.log("its on hub");
       fetch(`/github/repo/${nameGitHub}`)
         .then((res) => res.json())
         .then((result) => {
@@ -45,7 +44,6 @@ class GitProfile extends React.Component {
        * store the response to repoContent
        */
     } else if (this.props.chosenVcs === 1) {
-      console.log("its on lab");
       fetch(`/gitlab/repo/${nameGitLab}`)
         .then((res) => res.json())
         .then((result) => {
