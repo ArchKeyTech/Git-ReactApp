@@ -9,13 +9,14 @@ as their repositories info
 
 ## Screenshots
 Searching 'ArchKeyTech':
-![Screenshot from 2021-12-11 16-30-52](https://user-images.githubusercontent.com/50621192/145680827-ae952089-c035-4878-baa8-0e62ed9cc111.png)
+![Screenshot from 2021-12-11 16-30-52](https://user-images.githubusercontent.com/50621192/145680924-8ab51804-f0a8-4004-8386-7cadf9d5990b.png)
 
 Loading search:
-![Screenshot from 2021-12-11 16-40-07](https://user-images.githubusercontent.com/50621192/145680857-9de685e1-dcb4-45be-ac05-f19035162c40.png)
+![Screenshot from 2021-12-11 16-40-07](https://user-images.githubusercontent.com/50621192/145680938-f0b2f46c-52f1-4d17-a9cc-7cfd1c12aba4.png)
+
 
 Found results:
-![Screenshot from 2021-12-11 16-44-12](https://user-images.githubusercontent.com/50621192/145680878-c1d8c0c0-c1bb-4572-9276-2b229938d3da.png)
+![Screenshot from 2021-12-11 16-44-12](https://user-images.githubusercontent.com/50621192/145680951-a0b29f5d-bd14-49fa-a7ab-83211ad22a41.png)
 
 ## How to install the app
 
