@@ -18,6 +18,9 @@ Loading search:
 Found results:
 ![Screenshot from 2021-12-11 16-44-12](https://user-images.githubusercontent.com/50621192/145680951-a0b29f5d-bd14-49fa-a7ab-83211ad22a41.png)
 
+Repositories and commits:
+![Screenshot from 2021-12-11 16-57-45](https://user-images.githubusercontent.com/50621192/145681171-8073d704-7ef5-4379-afcd-66f620ddd1e8.png)
+
 ## How to install the app
 
 Download the ZIP file of the code or Git Clone from your terminal. Then, navigate to the directory of the downloaded file, inside 'Git-ReactApp'. Using your text editor or your terminal, type` npm install`. This will setup the node_modules folder for the backend (make sure you are in the same directory where the package.json file is located). Similarly, navigate to the 'frontend' directory and repeat 'npm install', to setup the node_modules folder for the frontend
