@@ -20,12 +20,11 @@ Found results:
 
 ## How to install the app
 
-Download the ZIP file of the code or Git Clone from your terminal. Then, navigate to the directory of the downloaded file, inside 'Git-ReactApp'. Using your text editor or your terminal, type` npm install`. This will setup the node_modules folder (make sure you are in the same directory where the package.json file is located)
+Download the ZIP file of the code or Git Clone from your terminal. Then, navigate to the directory of the downloaded file, inside 'Git-ReactApp'. Using your text editor or your terminal, type` npm install`. This will setup the node_modules folder for the backend (make sure you are in the same directory where the package.json file is located). Similarly, navigate to the 'frontend' directory and repeat 'npm install', to setup the node_modules folder for the frontend
 
 ## Launching the app
 
-Once the install is complete, run `npm start` to launch the app in development mode.
-This will launch the app in the browser with server [http://localhost:3000](http://localhost:3000).
+Once the installs are complete, run `npm start` from the 'Git-ReactApp' directory to launch the server, then in a side-tab inside your 'frontend' directory, run `npm start` to launch the react-app in development mode (This will launch the app in the browser with server [http://localhost:3000](http://localhost:3000) )
 
 
 ## Credit
