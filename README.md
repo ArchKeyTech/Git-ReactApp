@@ -8,17 +8,17 @@ Once a username is clicked, the app then displays the user info for that particu
 as their repositories info
 
 ## Screenshots
-Searching 'ArchKeyTech':
+### Searching 'ArchKeyTech':
 ![Screenshot from 2021-12-11 16-30-52](https://user-images.githubusercontent.com/50621192/145680924-8ab51804-f0a8-4004-8386-7cadf9d5990b.png)
 
-Loading search:
+### Loading search:
 ![Screenshot from 2021-12-11 16-40-07](https://user-images.githubusercontent.com/50621192/145680938-f0b2f46c-52f1-4d17-a9cc-7cfd1c12aba4.png)
 
 
-Found results:
+### Found results:
 ![Screenshot from 2021-12-11 16-44-12](https://user-images.githubusercontent.com/50621192/145680951-a0b29f5d-bd14-49fa-a7ab-83211ad22a41.png)
 
-Repositories and commits:
+### Repositories and commits:
 ![Screenshot from 2021-12-11 16-57-45](https://user-images.githubusercontent.com/50621192/145681171-8073d704-7ef5-4379-afcd-66f620ddd1e8.png)
 
 ## How to install the app
