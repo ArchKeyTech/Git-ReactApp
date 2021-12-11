@@ -149,7 +149,6 @@ class App extends React.Component {
        * from Users component
        */
     } else {
-      console.log(userDetails);
       return (
         <div className="App">
           <div className="heading">
