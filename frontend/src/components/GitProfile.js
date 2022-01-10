@@ -27,7 +27,7 @@ class GitProfile extends React.Component {
      * store the response to repoContent
      */
     if (this.props.chosenVcs === 0) {
-      fetch(`/github/repo/${nameGitHub}`)
+      fetch(`https://git-reactapp.herokuapp.com/github/repo/${nameGitHub}`)
         .then((res) => res.json())
         .then((result) => {
           this.setState({
@@ -44,7 +44,7 @@ class GitProfile extends React.Component {
        * store the response to repoContent
        */
     } else if (this.props.chosenVcs === 1) {
-      fetch(`/gitlab/repo/${nameGitLab}`)
+      fetch(`https://git-reactapp.herokuapp.com/gitlab/repo/${nameGitLab}`)
         .then((res) => res.json())
         .then((result) => {
           this.setState({
