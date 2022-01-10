@@ -44,7 +44,7 @@ class App extends React.Component {
 
   //function to fetch users info
   getUser() {
-    fetch("/user/" + this.state.inputName)
+    fetch("https://git-reactapp.herokuapp.com/user/" + this.state.inputName)
       .then((res) => res.json())
       .then((result) => {
         //returns the response
