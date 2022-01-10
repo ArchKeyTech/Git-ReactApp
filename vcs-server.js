@@ -14,6 +14,15 @@ const port = process.env.PORT || 4000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self'", "https: data:"]
+    }
+  })
+)
+
 require("isomorphic-fetch");
 
 const gitlab_token = "glpat-xyRszvf5c3qGuiK4vJy4";
