@@ -14,10 +14,13 @@ require("isomorphic-fetch");
 
 const gitlab_token = "glpat-xyRszvf5c3qGuiK4vJy4";
 
-app.use(express.static(path.join(__dirname, "/frontend/build")));
-app.get("/*", (req, res) => {
+if (process.env.NODE_ENV === 'production'){
+  
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "/frontend/build", "index.html"));
-});
+  });
+}
 
 /*the structure of our queries will be as follow:
 --> user-details 
