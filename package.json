@@ -5,9 +5,8 @@
   "main": "vcs-server.js",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon vcs-server.js",
-    "client": "cd frontend && npm start",
-    "dev": "concurrently \"nodemon server.js\" \"npm run client\""
+    "start": "node vcs-server.js",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
