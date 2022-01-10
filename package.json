@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "start": "node vcs-server.js",
-    "heroku-postbuild": "cd frontend && npm install && set INLINE_RUNTIME_CHUNK=false&& npm run build"
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
