@@ -5,7 +5,7 @@
   "main": "vcs-server.js",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon vcs-server.js"
+    "start": "node vcs-server.js"
   },
   "author": "",
   "license": "ISC",
