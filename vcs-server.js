@@ -1,7 +1,7 @@
 /**
  * Module dependencies
  */
-
+const bodyParser = require('body-parser')
 const express = require("express");
 const helmet = require("helmet");
 const path = require("path");
@@ -10,6 +10,10 @@ const app = express();
 app.use(helmet());
 
 const port = process.env.PORT || 4000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 require("isomorphic-fetch");
 
 const gitlab_token = "glpat-xyRszvf5c3qGuiK4vJy4";
