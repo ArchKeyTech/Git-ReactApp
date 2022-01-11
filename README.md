@@ -32,7 +32,7 @@ Once the installs are complete, run `npm start` from the 'Git-ReactApp' director
 
 ## Launching via Heroku
 
-Click the link to play via Heroku - https://git-reactapp.herokuapp.com/
+Click the link to launch via Heroku - https://git-reactapp.herokuapp.com/
 
 
 ## Credit
