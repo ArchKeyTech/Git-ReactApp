@@ -56,7 +56,6 @@ class App extends React.Component {
           //store the response
           userDetails: result,
         });
-        console.log(this.state.userDetails)
       })
       //catch errors
       .catch((error) => {
