@@ -30,6 +30,11 @@ Download the ZIP file of the code or Git Clone from your terminal. Then, navigat
 Once the installs are complete, run `npm start` from the 'Git-ReactApp' directory to launch the server, then in a side-tab inside your 'frontend' directory, run `npm start` to launch the react-app in development mode (This will launch the app in the browser with server [http://localhost:3000](http://localhost:3000) )
 
 
+## Launching via Heroku
+
+Click the link to play via Heroku - https://git-reactapp.herokuapp.com/
+
+
 ## Credit
 
 By [Dan-Samuel Moleka](https://github.com/ArchKeyTechnique)
