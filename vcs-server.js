@@ -255,7 +255,7 @@ app.get("/gitlab/repo/:username", async (req, resp) => {
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/public"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend/public", "index.html"));
+    res.sendFile(path.resolve(__dirname + "frontend/public", "index.html"));
   });
 }
 app.listen(port, () => console.log(`listening on ${port}`));
