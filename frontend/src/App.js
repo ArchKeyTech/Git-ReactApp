@@ -114,7 +114,11 @@ const App = () => {
           </div>
           <div className="main-page">
             <div className="search-block reveal">
-              <form className="search" onSubmit={handleOnSubmit}>
+              <form
+                className="search"
+                onSubmit={handleOnSubmit}
+                spellcheck="false"
+              >
                 <input
                   type="text"
                   required
