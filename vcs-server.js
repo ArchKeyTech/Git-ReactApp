@@ -9,6 +9,15 @@ const path = require("path");
 const app = express();
 app.use(helmet());
 
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self'", "https: data:"],
+    },
+  })
+);
+
 const port = process.env.PORT || 4000;
 require("isomorphic-fetch");
 
