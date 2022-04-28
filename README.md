@@ -9,17 +9,18 @@ as their repositories info
 
 ## Screenshots
 ### Searching 'ArchKeyTech':
-![Screenshot from 2021-12-11 16-30-52](https://user-images.githubusercontent.com/50621192/145680924-8ab51804-f0a8-4004-8386-7cadf9d5990b.png)
-
-### Loading search:
-![Screenshot from 2021-12-11 16-40-07](https://user-images.githubusercontent.com/50621192/145680938-f0b2f46c-52f1-4d17-a9cc-7cfd1c12aba4.png)
-
+![loading](https://user-images.githubusercontent.com/50621192/165840264-a767ab72-8d13-4e8f-a0b7-7f9fab9751d3.png)
 
 ### Found results:
-![Screenshot from 2021-12-11 16-44-12](https://user-images.githubusercontent.com/50621192/145680951-a0b29f5d-bd14-49fa-a7ab-83211ad22a41.png)
+![searchresult](https://user-images.githubusercontent.com/50621192/165840332-8e0f1d0f-636b-4f2e-b800-8d90ef78316a.png)
+
+
+### User profile:
+![profile](https://user-images.githubusercontent.com/50621192/165839810-8529dcf9-25bd-47fe-8d12-734bd80857fe.png)
+
 
 ### Repositories and commits:
-![Screenshot from 2021-12-11 16-57-45](https://user-images.githubusercontent.com/50621192/145681171-8073d704-7ef5-4379-afcd-66f620ddd1e8.png)
+![repo](https://user-images.githubusercontent.com/50621192/165840407-9da25f2c-3b0e-4dea-b2c2-532fd9c43146.png)
 
 ## How to install the app
 
@@ -32,7 +33,7 @@ Once the installs are complete, run `npm start` from the 'Git-ReactApp' director
 
 ## Launching via Heroku
 
-Click the link to launch via Heroku - https://git-reactapp.herokuapp.com/
+Click the link to launch via Heroku - https://git-app-react.herokuapp.com/
 
 
 ## Credit
