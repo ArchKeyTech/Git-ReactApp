@@ -1,37 +1,109 @@
 /*
 CSS styling of App component
 */
-
+*{
+  margin:0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 /*styling the github gitlab main background image*/
-.background-img {
-  width: 40%;
-  padding-bottom: 15%;
-  padding-top: 5%;
+.background-img-gitlab, .background-img-github {
+  
+  /* padding-bottom: 10%;
+  padding-top:5%; */
+
+  margin-left: 10px;
+  opacity: 0.5;
 }
 
+.background-img-github{
+  width: 10%;
+  filter: invert(10%) sepia(10%) saturate(1449%) hue-rotate(50deg)
+  brightness(50%) contrast(100%);
+}
+
+.background-img-gitlab{
+  width: 10%;
+  filter: invert(120%) sepia(0%) saturate(1449%) hue-rotate(16deg)
+  brightness(100%) contrast(100%);
+  
+
+}
+
+@font-face {
+  font-family: Futura;
+  src: url('./Futura\ Condensed\ Extra\ Bold.otf');
+}
 /*styling of search engine heading */
 .heading{
   margin: 30px;
-  color: orange;
+  font-size: 26px;
+  color: rgba(73, 64, 48, 0.644);
+  font-family: Futura, sans-serif;
+  text-transform: uppercase
 }
 
 /*styling body element*/
-body {
-  background-color: rgba(32, 8, 59, 0.9);
+.scene {
+  /* background: url('./search.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* min-height: 3346.27px; */
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 12px;
 }
 
+::-webkit-scrollbar-thumb {
+  background: rgba(73, 64, 48, 0.699);
+  border-radius: 10px;
+}
+
+/* body:hover, body:active, body:focus{
+  overflow-y: auto;
+} */
+body{
+  background-color: rgba(221, 221, 212, 0.61);
+  background-image: url('./searchq.jpg'), url('./search.jpg');
+  background-position:
+    top right, /* this positions the first image */
+    bottom left ; /* this positions the second image */
+  background-repeat: no-repeat;
+}
 /* styling App div which holds main page divs */
 .App {
-  background-color: rgb(100, 81, 148);
+  background-color: rgba(139, 136, 131, 0.425);
+  /* background-image: url('./search.jpg'); */
   margin: auto;
   width: 40%;
-  min-width: 600px;
+  /* min-width: 600px; */
   padding: 10px;
   text-align: center;
   border-radius: 20px;
   margin-top: 50px;
+  opacity: 0.8;
 }
 
+.welcomeDiv {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgba(85, 76, 76, 0.575);
+  font-weight: bold;
+  font-family: Futura, sans-serif;
+  font-size: 40px;
+  margin-top: 100px;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  padding-top: 15%;
+  
+}
+
+.whiteKeyWord{
+  color: rgba(255, 255, 255, 0.877)
+}
 /*styling main-page div inside App class*/
 .main-page {
   margin: auto;
@@ -45,7 +117,11 @@ body {
   display: inline-block;
   width: 90%;
 }
-
+.loading{
+  /* background-color: rgba(88, 80, 64, 0.836); */
+  position: relative;
+  left: 45%;
+}
 /*styling of the input form*/
 input {
   
@@ -53,15 +129,16 @@ input {
   text-align: center;
   padding: 0px;
   margin: 0px;
-  color: rgb(255, 255, 255);
+  color: rgba(78, 71, 71, 0.678);
   height: 100%;
-  border: none;
+  border: solid 1px rgba(175, 191, 192, 0.01);
   outline: none;
-  background-color: rgb(184, 217, 219, 0.5);
+  background-color: rgba(224, 226, 226, 0.555);
   width: 60%;
   border-radius: 10px 0px 0px 10px;
-  font-size: 15px;
- 
+  font-size: 20px;
+ font-weight: bold;
+ font-style: italic;
 }
 
 /* styling Search form */
@@ -72,12 +149,77 @@ input {
 }
 /* styling of Search button */
 .search-btn {
-  border: none;
-  outline: none;
+  border: solid 1px rgba(73, 64, 48, 0.055);
+  outline: solid 1px rgba(73, 64, 48, 0.301);
   color: white;
-  background-color: orange;
+  background-color: rgba(73, 64, 48, 0.644);
   padding: 2px 20px 2px 20px;
   height: 100%;
   border-radius: 0px 10px 10px 0px;
+}
+
+.search-btn:hover{
+  background-color: rgba(73, 64, 48, 0.466);
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease
+}
+
+.reveal.active{
+  transform: translateY(0px);
+  opacity: 1;
+
+}
+
+.revealMoto{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease
+}
+
+.revealMoto.activeMoto{
+  transform: translateY(0px);
+  opacity: 1;
+
+}
+
+
+.revealIcons{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease
+}
+
+.revealIcons.activeIcons{
+  transform: translateY(0px);
+  opacity: 0.5;
+
+}
+
+@media screen and (max-width: 550px) {
+  .App{
+    width: 90%;
+  }
+}
+@media screen and (min-width: 551px) and (max-width: 768px) {
+  .App{
+    width: 90%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .App{
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1524px) {
+  .App{
+    width: 60%;
+  }
 }
 

@@ -1,43 +1,23 @@
 /**
  * Module dependencies
  */
-const bodyParser = require('body-parser')
+
 const express = require("express");
 const helmet = require("helmet");
-const path = require("path");
 
 const app = express();
 app.use(helmet());
 
 const port = process.env.PORT || 4000;
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: true,
-    directives: {
-      "img-src": ["'self'", "https: data:"]
-    }
-  })
-)
-
 require("isomorphic-fetch");
 
 const gitlab_token = "glpat-xyRszvf5c3qGuiK4vJy4";
 
-
-if (process.env.NODE_ENV === 'production'){
-  
-  app.use(express.static(path.join(__dirname, '/frontend/build')));
-}
-
 /*the structure of our queries will be as follow:
---> user-details 
-----> user-repos
---------> user-repos-commits
-*/
+ --> user-details 
+ ----> user-repos
+ --------> user-repos-commits
+ */
 
 //GETTING THE USER DETAILS FOR A REQUESTED USERNAME FOR EACH OF THE VCS
 app.get("/user/:username", async (req, resp) => {
@@ -133,7 +113,7 @@ app.get("/github/repo/:username", async (req, resp) => {
     //check if our response ok status is false (meaning there's an error)
     if (!repoResponse.ok) {
       throw new Error(
-        `No repo exists for this user ${repoResponse.statusText}`
+        `No repository exists for this user ${repoResponse.statusText}`
       );
 
       //else if no error
@@ -215,7 +195,7 @@ app.get("/gitlab/repo/:username", async (req, resp) => {
       //else if no error
     } else if (reposObj.length === 0) {
       //throw error
-      throw new Error("User has no repository");
+      throw new Error("No repository exists for this user");
     } else {
       //looping through each of the 5 repos
       for (let i = 0; i < reposObj.length; i++) {

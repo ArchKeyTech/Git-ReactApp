@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Users.css";
 
 /**
@@ -6,15 +6,16 @@ import "./Users.css";
  * @param {*} props
  * @returns
  */
-function Users(props) {
+const Users = ({ userDetails, setVcs, chosenVcs }) => {
   //passing states down as props
-  const { userDetails, setVcs, chosenVcs } = props;
 
   //array to hold our two VCS titles
   const vcsOptions = ["GitHub", "GitLab"];
 
   //option variable for the 2 VCS options
   let option = 0;
+
+  // useEffect(() => {}, [userDetails]);
 
   //iterate through the user details from the API's response
   let usersResult = userDetails.map((user, key) => {
@@ -23,6 +24,7 @@ function Users(props) {
 
     //if we are currently on the first index of vcsOptions we display GitHub user
     if (vcsOptions[option] === "GitHub") {
+      console.log(option);
       /**
        * each user block holds the found user's name as well as the VCS's name on top
        * depending on the div class, the user's details will be displayed or hidden
@@ -33,15 +35,18 @@ function Users(props) {
       userBlock = (
         <div
           key={key}
-          className={option === chosenVcs ? "user-block display" : "user-block"}
+          className={
+            option === chosenVcs
+              ? "user-block left display github "
+              : "user-block left github"
+          }
+          onClick={(ev) => setVcs(ev)}
         >
-          <h3 className="vcs-title">GitHub</h3>
+          <h3 className="vcs-title github">GitHub</h3>
           {"error" in user ? (
             <p>{user.error}</p>
           ) : (
-            <p className="user-name" id={option} onClick={(ev) => setVcs(ev)}>
-              Account: {user.login}
-            </p>
+            <p className="user-name github">Account: {user.login}</p>
           )}
         </div>
       );
@@ -52,19 +57,23 @@ function Users(props) {
       userBlock = (
         <div
           key={key}
-          className={option === chosenVcs ? "user-block display" : "user-block"}
+          className={
+            option === chosenVcs
+              ? "user-block right display gitlab"
+              : "user-block right gitlab"
+          }
+          onClick={(ev) => setVcs(ev)}
         >
-          <h3 className="vcs-title">GitLab</h3>
+          <h3 className="vcs-title gitlab">GitLab</h3>
           {"error" in user ? (
             <p>{user.error}</p>
           ) : (
-            <p className="user-name" id={option} onClick={(ev) => setVcs(ev)}>
-              Account: {user.username}
-            </p>
+            <p className="user-name gitlab">Account: {user.username}</p>
           )}
         </div>
       );
     }
+
     //increment the option variable
     option++;
     //return each userBlock for a VCS
@@ -72,7 +81,7 @@ function Users(props) {
   });
 
   //function to toggle off the display class of VCS when another VCS's user is clicked
-  function toggleResult(childClass) {
+  const toggleResult = (childClass) => {
     //find the class that is active (displayed)
     let activeClass = document.getElementsByClassName("display");
     //if there is user content being displayed we change the class to a blank to hide it
@@ -81,7 +90,7 @@ function Users(props) {
       childClass.parentNode.className += " display";
     }
     //since this function is passed to an event listener, the parentnode of the element clicked will be switched to 'display'
-  }
+  };
 
   //the class of the elements showing the user names per VCS
   let classToShow = document.getElementsByClassName("user-name");
@@ -93,6 +102,6 @@ function Users(props) {
 
   //return the the users found
   return <div className="users-row">{usersResult}</div>;
-}
+};
 
 export default Users;

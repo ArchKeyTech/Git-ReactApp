@@ -16,14 +16,19 @@
     margin: 0px;
 }
 
+.repo-name {
+    text-transform: uppercase;
+}
+
 /* Styling for the repos description */
 .repo-description{
     color: white;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .repo-commit-title{
-    background-color: rgba(170, 170, 170, 0.089);
+    background-color: rgba(73, 64, 48, 0.699);
     height: fit-content;
 }
 .repo-commit-title p{
@@ -47,13 +52,39 @@
 /* Styling for the commits */
 .commit-msg-div {
     padding: 10px 0px 20px 20px;
+    background-color: rgb(73, 64, 48);
 }
 
 /* list styling */
 ul {
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    left: -5%;
 }
 /*styling of repositories main title*/
 .repos-main-title{
     text-align: center;
 }
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease
+  }
+  
+  .reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+  
+  }
+
+  @media screen and (max-width: 550px) {
+      ul{
+          font-size: 14px
+      }
+  }

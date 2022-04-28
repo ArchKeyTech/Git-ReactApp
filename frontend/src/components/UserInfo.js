@@ -5,8 +5,7 @@ import * as ImIcons from "react-icons/im";
 import * as BsIcons from "react-icons/bs";
 
 //UserInfo component to display details about each user (name, bio, location, twitter)
-const UserInfo = (props) => {
-  const { userDetails, chosenVcs } = props;
+const UserInfo = ({ userDetails, chosenVcs }) => {
   return (
     <>
       <div className="top-container">

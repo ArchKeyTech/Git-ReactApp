@@ -1,169 +1,237 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import * as FaIcons from "react-icons/fa";
 import "./App.css";
-import loadingGif from "./load.gif";
-import github from "./github.jpg";
-import gitlab from "./gitlab.jpg";
+import github from "./gitmark.png";
+import gitlab from "./gitlab1.png";
 import Users from "./components/Users";
 import GitProfile from "./components/GitProfile";
+import Loading from "./components/Loading";
+import ScrollButton from "./ScrollButton";
 
 /**
  * App class to act as main component
  */
-class App extends React.Component {
-  constructor() {
-    super();
-
-    //handle function binding
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
-    this.getUser = this.getUser.bind(this);
-    this.setVcs = this.setVcs.bind(this);
-
-    //states
-    this.state = {
-      //name inserted for search
-      inputName: "",
-      //check if data are busy loading
-      busyLoading: false,
-      //check if data is loaded
-      isLoaded: false,
-      //response with user results
-      userDetails: null,
-      //chosen VCS (0 for github, 1 for gitlab)
-      chosenVcs: null,
-    };
-  }
+const App = () => {
+  const [inputName, setInputName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [userDetails, setUserDetails] = useState(null);
+  const [chosenVcs, setChosenVcs] = useState(null);
+  const [firstLoad, setFirtstLoad] = useState(true);
 
   //handle function to monitor input value of car ID
-  handleInputChange(ev) {
-    this.setState({
-      inputName: ev.target.value,
-    });
-  }
+  const handleInputChange = (ev) => {
+    setInputName(ev.target.value);
+  };
 
+  const revealText = () => {
+    const reveals = document.querySelectorAll(".reveal");
+
+    for (let i = 0; i < reveals.length; i++) {
+      setTimeout(() => {
+        reveals[i].classList.add("active");
+      }, 0);
+    }
+  };
+  const revealIcons = () => {
+    const reveals = document.querySelectorAll(".revealIcons");
+
+    for (let i = 0; i < reveals.length; i++) {
+      setTimeout(() => {
+        reveals[i].classList.add("activeIcons");
+      }, 0);
+    }
+  };
   //function to fetch users info
-  getUser() {
-    fetch("/user/" + this.state.inputName)
-      .then((res) => res.json())
-      .then((result) => {
-        //returns the response
-        this.setState({
-          //set busy loading to false
-          busyLoading: false,
-          //is loaded to true (indicates we got a response)
-          isLoaded: true,
-          //store the response
-          userDetails: result,
-        });
-      })
-      //catch errors
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+  const fetchUser = async () => {
+    try {
+      const response = await fetch("/user/" + inputName);
+      const data = await response.json();
+      setLoading(false);
+      setUserDetails(data);
+      setIsLoaded(true);
+      setFirtstLoad(false);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   //handle function for when input form is submitted
-  handleOnSubmit(ev) {
+  const handleOnSubmit = (ev) => {
     //prevent form from reloading page when submitted
     ev.preventDefault();
     //sets busy loading to true
-    this.setState({
-      busyLoading: true,
-      isLoaded: false,
-      userDetails: null,
-      chosenVcs: null,
-    });
+    setIsLoaded(false);
+    setUserDetails(null);
+    setChosenVcs(null);
+    setLoading(true);
 
-    //fetch the user data
-    this.getUser();
-  }
+    fetchUser();
+  };
 
   //handle function to set the chosen VCS based on the name clicked on (each name text has an ID attribute, 0 and 1)
-  setVcs(ev) {
-    this.setState({
-      chosenVcs: parseInt(ev.target.id),
-    });
-  }
+  const setVcs = (ev) => {
+    if (ev.target.className.includes("github")) {
+      setChosenVcs(0);
+    } else if (ev.target.className.includes("gitlab")) {
+      setChosenVcs(1);
+    }
+  };
 
-  render() {
-    //states used in render
-    const { isLoaded, busyLoading, chosenVcs, userDetails } = this.state;
+  useEffect(() => {
+    revealText();
+    revealIcons();
+  }, []);
 
-    /**
-     * if results haven't loaded yet, we display the search bar and main page
-     */
-    if (!isLoaded) {
-      return (
+  /**
+   * if results haven't loaded yet, we display the search bar and main page
+   */
+  if (!isLoaded && firstLoad) {
+    return (
+      <div className="scene">
         <div className="App">
           <div className="heading">
-            <h1>Search Engine</h1>
+            <h1 className="reveal">
+              <i>Git</i>
+              <span style={{ color: "rgba(255, 255, 254, 0.644)" }}>
+                <i>Book</i>
+              </span>
+            </h1>
+            <div>
+              <span>
+                <img
+                  className="background-img-github revealIcons"
+                  src={github}
+                  alt="github-logo"
+                />
+                <img
+                  className="background-img-gitlab revealIcons"
+                  src={gitlab}
+                  alt="gitlab-logo"
+                />
+              </span>
+            </div>
           </div>
           <div className="main-page">
-            <div className="search-block">
-              <form
-                className="search"
-                onSubmit={(ev) => this.handleOnSubmit(ev)}
-              >
+            <div className="search-block reveal">
+              <form className="search" onSubmit={handleOnSubmit}>
                 <input
                   type="text"
                   required
-                  onChange={(ev) => this.handleInputChange(ev)}
+                  onChange={(ev) => handleInputChange(ev)}
                   name="input"
+                  autoComplete="off"
                 />
                 <button type="submit" className="search-btn">
                   <FaIcons.FaSearch />
                 </button>
               </form>
             </div>
-            <div>
-              <span>
-                <img
-                  className="background-img"
-                  src={github}
-                  alt="github-logo"
-                />
-                <img
-                  className="background-img"
-                  src={gitlab}
-                  alt="gitlab-logo"
-                />
-              </span>
+
+            <div className="welcomeDiv reveal">
+              <i>
+                Connect with <span className="whiteKeyWord">Github </span>
+                and <span className="whiteKeyWord">Gitlab</span> coders
+              </i>
             </div>
 
             <div>
               {/**if results are being loaded display the loading animation */}
-              {busyLoading ? (
-                <img
-                  className="loading-img"
-                  src={loadingGif}
-                  alt="loading gif"
-                ></img>
-              ) : null}
+              {loading ? <Loading /> : null}
             </div>
           </div>
         </div>
-      );
-      /**
-       * else if results are loaded, we display the search bar and mainpage again, with the names found
-       * from Users component
-       */
-    } else {
-      return (
+        <ScrollButton />
+      </div>
+    );
+  } else if (!isLoaded && !firstLoad) {
+    return (
+      <div className="scene">
         <div className="App">
           <div className="heading">
-            <h1>Search Engine</h1>
+            <h1>
+              <i>Git</i>
+              <span style={{ color: "rgba(255, 255, 254, 0.644)" }}>
+                <i>Book</i>
+              </span>
+            </h1>
+            <div>
+              <span>
+                <img
+                  className="background-img-github"
+                  src={github}
+                  alt="github-logo"
+                />
+                <img
+                  className="background-img-gitlab"
+                  src={gitlab}
+                  alt="gitlab-logo"
+                />
+              </span>
+            </div>
           </div>
           <div className="main-page">
             <div className="search-block">
-              <form
-                className="search"
-                onSubmit={(ev) => this.handleOnSubmit(ev)}
-              >
+              <form className="search" onSubmit={handleOnSubmit}>
                 <input
                   type="text"
                   required
-                  onChange={(ev) => this.handleInputChange(ev)}
+                  onChange={(ev) => handleInputChange(ev)}
+                  name="input"
+                  autoComplete="off"
+                />
+                <button type="submit" className="search-btn">
+                  <FaIcons.FaSearch />
+                </button>
+              </form>
+            </div>
+
+            <div>
+              {/**if results are being loaded display the loading animation */}
+              {loading ? <Loading /> : null}
+            </div>
+          </div>
+        </div>
+        <ScrollButton />
+      </div>
+    );
+    /**
+     * else if results are loaded, we display the search bar and mainpage again, with the names found
+     * from Users component
+     */
+  } else {
+    return (
+      <div className="scene">
+        <div className="App">
+          <div className="heading">
+            <h1>
+              <i>Git</i>
+              <span style={{ color: "rgba(255, 255, 254, 0.644)" }}>
+                <i>Book</i>
+              </span>
+            </h1>
+            <div>
+              <span>
+                <img
+                  className="background-img-github"
+                  src={github}
+                  alt="github-logo"
+                />
+                <img
+                  className="background-img-gitlab"
+                  src={gitlab}
+                  alt="gitlab-logo"
+                />
+              </span>
+            </div>
+          </div>
+          <div className="main-page">
+            <div className="search-block">
+              <form className="search" onSubmit={handleOnSubmit}>
+                <input
+                  type="text"
+                  required
+                  onChange={(ev) => handleInputChange(ev)}
                   name="input"
                 />
                 <button type="submit" className="search-btn">
@@ -171,23 +239,10 @@ class App extends React.Component {
                 </button>
               </form>
             </div>
-            <div>
-              <span>
-                <img
-                  className="background-img"
-                  src={github}
-                  alt="github-logo"
-                />
-                <img
-                  className="background-img"
-                  src={gitlab}
-                  alt="gitlab-logo"
-                />
-              </span>
-            </div>
+
             <Users
               userDetails={userDetails}
-              setVcs={this.setVcs}
+              setVcs={setVcs}
               chosenVcs={chosenVcs}
             />
             {/**we mount the GitProfile component only if chosenVCS is 0 or 1 */}
@@ -196,9 +251,10 @@ class App extends React.Component {
             )}
           </div>
         </div>
-      );
-    }
+        <ScrollButton />
+      </div>
+    );
   }
-}
+};
 
 export default App;
