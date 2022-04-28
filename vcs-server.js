@@ -251,4 +251,10 @@ app.get("/gitlab/repo/:username", async (req, resp) => {
   resp.send(repoDetails);
 });
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("frontend"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
+  });
+}
 app.listen(port, () => console.log(`listening on ${port}`));
